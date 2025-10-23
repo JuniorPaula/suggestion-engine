@@ -6,19 +6,29 @@ import (
 )
 
 func main() {
-	trie := engine.NewTrie()
+	e := engine.NewSuggestionEngine()
+
+	// insert words
 	words := []string{
 		"programação", "programador", "produto", "processo",
-		"dinâmica", "python",
+		"python", "projeto", "professor", "dinâmica", "código", "golang",
 	}
 
 	for _, w := range words {
-		trie.Insert(w)
+		e.AddWord(w)
 	}
 
-	fmt.Println("Prefixo: pro")
-	fmt.Println(trie.SearchPrefix("pro"))
+	testInputs := []string{
+		"prog", "progrmação", "proje",
+		"pytohn", "dinamica",
+	}
 
-	fmt.Println("Distância entre 'progrmação' e programação:",
-		engine.EditDistance("progrmação", "programação"))
+	for _, input := range testInputs {
+		fmt.Printf("\n Entrada: %s\n", input)
+		suggestions := e.Suggest(input, 5)
+
+		for _, s := range suggestions {
+			fmt.Printf(" → %s (score %.2f)\n", s.Word, s.Score)
+		}
+	}
 }

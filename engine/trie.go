@@ -54,3 +54,20 @@ func (t *Trie) collectWords(node *TrieNode, prefix string, results *[]string) {
 		t.collectWords(child, prefix+string(ch), results)
 	}
 }
+
+// GetFrequency returns a word frequency if exists
+func (t *Trie) GetFrequency(word string) int {
+	node := t.root
+	for _, ch := range word {
+		if node.children[ch] == nil {
+			return 0
+		}
+		node = node.children[ch]
+	}
+
+	if node.isEnd {
+		return node.freq
+	}
+
+	return 0
+}
