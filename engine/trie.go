@@ -18,6 +18,8 @@ func NewTrie() *Trie {
 
 // Insert a word into Trie
 func (t *Trie) Insert(word string) {
+	word = Normalize(word)
+
 	node := t.root
 	for _, ch := range word {
 		if node.children[ch] == nil {
@@ -31,6 +33,8 @@ func (t *Trie) Insert(word string) {
 
 // Find all words with the prefix
 func (t *Trie) SearchPrefix(prefix string) []string {
+	prefix = Normalize(prefix)
+
 	node := t.root
 	for _, ch := range prefix {
 		if node.children[ch] == nil {
@@ -57,6 +61,8 @@ func (t *Trie) collectWords(node *TrieNode, prefix string, results *[]string) {
 
 // GetFrequency returns a word frequency if exists
 func (t *Trie) GetFrequency(word string) int {
+	word = Normalize(word)
+
 	node := t.root
 	for _, ch := range word {
 		if node.children[ch] == nil {

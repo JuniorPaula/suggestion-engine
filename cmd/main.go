@@ -14,11 +14,20 @@ func main() {
 		log.Fatal(err)
 	}
 
-	testInputs := []string{"programa", "progrmação", "dinam", "pytohn"}
+	testInputs := []string{
+		"programa",
+		"progrmação",
+		"programacao",
+		"programação",
+		"dinam",
+		"dinamica",
+		"dinâmica",
+		"pytohn",
+	}
 
-	for _, input := range testInputs {
-		fmt.Printf("\n Entrada: %s\n", input)
-		suggestions := e.Suggest(input, 5)
+	for _, in := range testInputs {
+		fmt.Printf("\n Entrada: %s\n", in)
+		suggestions := e.Suggest(in, 5)
 
 		for _, s := range suggestions {
 			fmt.Printf(" → %s (score %.2f)\n", s.Word, s.Score)

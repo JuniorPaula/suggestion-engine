@@ -1,5 +1,9 @@
 package engine
 
+import (
+	"strings"
+)
+
 type SuggestionEngine struct {
 	trie *Trie
 }
@@ -14,6 +18,8 @@ func (e *SuggestionEngine) AddWord(word string) {
 
 // Suggest return the most relevants suggestion for the typing term
 func (e *SuggestionEngine) Suggest(input string, limit int) []RankedWord {
+	input = Normalize(input)
+
 	// Find the prefix
 	prefixMatches := e.trie.SearchPrefix(input)
 
@@ -37,12 +43,22 @@ func (e *SuggestionEngine) Suggest(input string, limit int) []RankedWord {
 }
 
 // findByEditDistance search by approximate edit distance
-func (e *SuggestionEngine) findByEditDistance(input string, maxDist int) []string {
+func (e *SuggestionEngine) findByEditDistance(input string, baseMax int) []string {
 	var results []string
 	all := e.trie.SearchPrefix("") // find all
 
+	// maximum addaptive distance (in % of size)
+	maxDist := baseMax
+	if len(input) > 8 {
+		maxDist = 4
+	}
+
 	for _, w := range all {
-		if EditDistance(input, w) <= maxDist {
+		mainWord := strings.Fields(w)[0]
+		dist := EditDistance(input, mainWord)
+
+		// tolerates up to 40% difference in word size
+		if dist <= maxDist || dist <= len(mainWord)/3 {
 			results = append(results, w)
 		}
 	}
