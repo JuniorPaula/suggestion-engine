@@ -1,5 +1,7 @@
 package engine
 
+import "math"
+
 type RankedWord struct {
 	Word  string
 	Score float64
@@ -14,7 +16,7 @@ func rankWords(input string, words []string, trie *Trie) []RankedWord {
 		freq := trie.GetFrequency(w)
 
 		// Simple Score: freq / (1 + distance)
-		score := float64(freq) / (1.0 + float64(dist))
+		score := float64(freq) / math.Pow(1.0+float64(dist), 0.5) // distance with smallest weight
 		results = append(results, RankedWord{Word: w, Score: score})
 	}
 

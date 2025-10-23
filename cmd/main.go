@@ -2,26 +2,19 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"suggestion-engine/engine"
 )
 
 func main() {
 	e := engine.NewSuggestionEngine()
 
-	// insert words
-	words := []string{
-		"programação", "programador", "produto", "processo",
-		"python", "projeto", "professor", "dinâmica", "código", "golang",
+	err := engine.LoadFromFile("data/searches.txt", e)
+	if err != nil {
+		log.Fatal(err)
 	}
 
-	for _, w := range words {
-		e.AddWord(w)
-	}
-
-	testInputs := []string{
-		"prog", "progrmação", "proje",
-		"pytohn", "dinamica",
-	}
+	testInputs := []string{"programa", "progrmação", "dinam", "pytohn"}
 
 	for _, input := range testInputs {
 		fmt.Printf("\n Entrada: %s\n", input)

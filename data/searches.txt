@@ -1,0 +1,11 @@
+programação dinamica 320
+programação python 410
+programação java 210
+programador backend 150
+programador frontend 180
+golang 250
+python 500
+dinâmica dos fluidos 90
+dinâmica orbital 70
+produto interno bruto 120
+processo seletivo 300

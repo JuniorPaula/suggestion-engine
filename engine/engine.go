@@ -19,7 +19,14 @@ func (e *SuggestionEngine) Suggest(input string, limit int) []RankedWord {
 
 	// if didn't find anything with the prefix, try typing correction
 	if len(prefixMatches) == 0 {
-		prefixMatches = e.findByEditDistance(input, 2) // tolerates up 2 errors
+
+		// the bigger the word, the greater the tolerance
+		maxDist := 2
+		if len(input) > 7 {
+			maxDist = 3
+		}
+
+		prefixMatches = e.findByEditDistance(input, maxDist) // tolerates up 3 errors
 	}
 
 	ranked := rankWords(input, prefixMatches, e.trie)
