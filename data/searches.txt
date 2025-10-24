@@ -1,11 +1,64 @@
-programação dinamica 320
-programação python 410
-programação java 210
-programador backend 150
-programador frontend 180
-golang 250
-python 500
-dinâmica dos fluidos 90
-dinâmica orbital 70
-produto interno bruto 120
-processo seletivo 300
+algoritmos 55
+estrutura de dados 319
+programacao dinamica 184
+teoria dos grafos 127
+automatos finitos 332
+linguagens formais 140
+sistemas operacionais 104
+compiladores 60
+redes de computadores 80
+banco de dados 61
+inteligencia artificial 105
+aprendizado de maquina 301
+redes neurais 170
+processamento de linguagem natural 57
+visao computacional 58
+python 314
+java 70
+golang 145
+javascript 65
+typescript 86
+c 384
+c++ 68
+rust 93
+swift 207
+kotlin 174
+engenharia de software 143
+arquitetura de software 79
+microservicos 200
+design patterns 304
+programacao orientada a objetos 402
+programacao funcional 140
+teste de software 81
+controle de versao 55
+git 77
+github 54
+docker 379
+kubernetes 357
+aws 371
+azure 59
+google cloud 137
+devops 65
+ci cd 94
+terraform 114
+ansible 128
+monitoramento prometheus 73
+observabilidade grafana 71
+analise de dados 223
+pandas python 148
+numpy python 108
+matplotlib 211
+scikit learn 369
+machine learning supervisionado 173
+machine learning nao supervisionado 112
+computacao quantica 404
+seguranca da informacao 58
+criptografia 179
+blockchain 137
+web3 223
+realidade aumentada 227
+realidade virtual 385
+internet das coisas 142
+iot 90
+automacao industrial 186
+robotica 56
