@@ -35,6 +35,9 @@ func main() {
 		return
 	}
 
+	history := engine.NewHistory("data/search_log.txt")
+	history.Load()
+
 	reader := bufio.NewReader(os.Stdin)
 
 	clearScreen()
@@ -45,6 +48,14 @@ func main() {
 	in := ""
 
 	for {
+		if len(history.Entries) > 0 {
+			fmt.Println(colorText("Últimas buscas:", "gray"))
+			for i, h := range history.Entries {
+				fmt.Printf("  %d. %s\n", i+1, colorText(h, "yellow"))
+			}
+			fmt.Println(strings.Repeat("—", 55))
+		}
+
 		fmt.Print(colorText("\nBuscar: ", "yellow"))
 		text, _ := reader.ReadString('\n')
 		in = strings.TrimSpace(text)
@@ -56,6 +67,8 @@ func main() {
 		start := time.Now()
 		suggestions := e.Suggest(in, 5)
 		elapsed := time.Since(start)
+
+		history.Add(in)
 
 		clearScreen()
 
@@ -76,5 +89,7 @@ func main() {
 				s.Score,
 			)
 		}
+
+		fmt.Println(strings.Repeat("—", 55))
 	}
 }
