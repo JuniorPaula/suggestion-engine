@@ -10,26 +10,33 @@ func min(a, b, c int) int {
 	return c
 }
 
+// EditDistance: use levenshtein distance to calculate the distance between two strings
 func EditDistance(a, b string) int {
 	m, n := len(a), len(b)
-	dp := make([][]int, m+1)
-	for i := range dp {
-		dp[i] = make([]int, n+1)
+	if m < n {
+		// ensure that b is the smallest string
+		a, b = b, a
+		m, n = n, m
 	}
 
-	for i := 0; i <= m; i++ {
-		for j := 0; j <= n; j++ {
-			if i == 0 {
-				dp[i][j] = j
-			} else if j == 0 {
-				dp[i][j] = i
-			} else if a[i-1] == b[j-1] {
-				dp[i][j] = dp[i-1][j-1]
+	prev := make([]int, n+1)
+	curr := make([]int, n+1)
+
+	for j := 0; j <= n; j++ {
+		prev[j] = j
+	}
+
+	for i := 1; i <= m; i++ {
+		curr[0] = i
+		for j := 1; j <= n; j++ {
+			if a[i-1] == b[j-1] {
+				curr[j] = prev[j-1]
 			} else {
-				dp[i][j] = 1 + min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1])
+				curr[j] = 1 + min(prev[j], curr[j-1], prev[j-1])
 			}
 		}
+		copy(prev, curr)
 	}
 
-	return dp[m][n]
+	return prev[n]
 }
