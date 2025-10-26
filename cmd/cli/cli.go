@@ -38,6 +38,8 @@ func main() {
 	history := engine.NewHistory("data/search_log.txt")
 	history.Load()
 
+	learner := engine.NewLearner(e, "data/searches.txt")
+
 	reader := bufio.NewReader(os.Stdin)
 
 	clearScreen()
@@ -68,7 +70,9 @@ func main() {
 		suggestions := e.Suggest(in, 5)
 		elapsed := time.Since(start)
 
+		// real-time learning
 		history.Add(in)
+		learner.Learn(in)
 
 		clearScreen()
 

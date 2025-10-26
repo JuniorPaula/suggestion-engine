@@ -62,3 +62,14 @@ internet das coisas 142
 iot 90
 automacao industrial 186
 robotica 56
+pyth 1
+grafos 1
+gra 1
+grafos 1
+teoria dos grafos 1
+teoria 1
+grafos 1
+grafos 1
+teoria dos grafos 1
+grafos 1
+teoria dos grafos 1

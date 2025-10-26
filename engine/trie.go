@@ -77,3 +77,23 @@ func (t *Trie) GetFrequency(word string) int {
 
 	return 0
 }
+
+// TrieNodeFromWord returns the node of the word if it exists
+func (t *Trie) TrieNodeFromWord(word string) *TrieNode {
+	word = Normalize(word)
+	node := t.root
+
+	for _, ch := range word {
+		next := node.children[ch]
+		if next == nil {
+			return nil
+		}
+		node = next
+	}
+
+	if node.isEnd {
+		return node
+	}
+
+	return nil
+}
