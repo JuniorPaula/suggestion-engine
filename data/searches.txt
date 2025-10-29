@@ -1,47 +1,3 @@
-estrutura de dados 319
-en 1
-engenharia de software 143
-kubernetes 357
-kotlin 174
-teoria 1
-teoria dos grafos 130
-teste de software 81
-terraform 114
-typescript 86
-inteligencia artificial 105
-internet das coisas 142
-iot 90
-r 1
-ru 1
-rus 1
-rust 94
-robotica 56
-redes de computadores 80
-redes neurais 170
-realidade aumentada 227
-realidade virtual 385
-numpy python 108
-c 388
-criptografia 179
-co 2
-com 2
-comp 1
-compiladores 60
-computacao 1
-computacao quantica 404
-controle de versao 55
-c++ 68
-ci 2
-ci cd 94
-cie 2
-cien 2
-cient 1
-cienc 2
-cienci 2
-ciencia 6
-web3 223
-java 70
-javascript 65
 p 2
 pandas python 148
 pr 2
@@ -55,42 +11,63 @@ programacao orientada a objetos 402
 programacao funcional 140
 pyth 1
 python 2314
+r 1
+ru 1
+rus 1
+rust 94
+robotica 56
+realidade virtual 385
+realidade aumentada 227
+redes de computadores 80
+redes neurais 170
+c 388
+ci 2
+ci cd 94
+cie 2
+cien 2
+cient 1
+cienc 2
+cienci 2
+ciencia 6
+criptografia 179
+co 2
+com 2
+comp 1
+computacao 1
+computacao quantica 404
+compiladores 60
+controle de versao 55
+c++ 68
+java 70
+javascript 65
+teoria 1
+teoria dos grafos 130
+teste de software 81
+terraform 114
+typescript 86
+a 2
+al 2
+algoritmos 55
+alto 1
+auto 1
+automatos finitos 332
+automacao industrial 186
 aprendizado de maquina 301
 arquitetura de software 79
 aws 371
 azure 59
-ansible 128
 analise de dados 223
-algoritmos 55
-automatos finitos 332
-automacao industrial 186
-g 2
-gra 2
-grafo 1
-grafos 6
-go 3
-gol 1
-golang 146
-google cloud 137
-git 77
-github 54
-observabilidade grafana 71
+ansible 128
+visao computacional 58
+inteligencia artificial 105
+internet das coisas 142
+iot 90
+microservicos 200
+monitoramento prometheus 73
 matplotlib 211
 machine learning supervisionado 173
 machine learning nao supervisionado 112
-microservicos 200
-monitoramento prometheus 73
-devops 65
-design patterns 304
-desenvolvedor 3
-desenvolvedor backend 2
-desenvlve 14
-docker 379
-sistemas operacionais 104
-swift 207
-scikit learn 369
-seguranca da informacao 58
-linguagens formais 140
+web3 223
 b 1
 backend 1
 banco de dados 61
@@ -98,4 +75,31 @@ blockchain 137
 br 1
 bra 1
 brasil 1
-visao computacional 58
+devops 65
+design patterns 304
+desenvlve 14
+desenvolvedor 3
+desenvolvedor backend 2
+docker 379
+swift 207
+scikit learn 369
+seguranca da informacao 58
+sistemas operacionais 104
+observabilidade grafana 71
+estrutura de dados 319
+en 1
+engenharia de software 143
+numpy python 108
+g 2
+gra 2
+grafo 1
+grafos 6
+go 3
+google cloud 137
+gol 1
+golang 146
+git 77
+github 54
+linguagens formais 140
+kubernetes 357
+kotlin 174

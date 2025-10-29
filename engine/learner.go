@@ -60,7 +60,6 @@ func (l *Learner) Save() error {
 	for _, w := range all {
 		freq := l.engine.trie.TrieFreq(w)
 		if freq > 0 {
-			fmt.Println("[INFO] updating dataset...")
 			fmt.Fprintf(f, "%s %d\n", w, freq)
 		}
 	}
