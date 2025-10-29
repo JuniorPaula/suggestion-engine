@@ -4,7 +4,9 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"os/signal"
 	"strings"
+	"syscall"
 	"time"
 
 	"suggestion-engine/engine"
@@ -46,6 +48,24 @@ func main() {
 	fmt.Println(colorText("🧠 Modo interativo do motor de sugestão", "cyan"))
 	fmt.Println(colorText("Digite algo e veja as sugestões em rempo real (CRTL+C pra sair)", "gray"))
 	fmt.Println(strings.Repeat("—", 55))
+
+	sig := make(chan os.Signal, 1)
+	signal.Notify(sig, os.Interrupt, syscall.SIGTERM)
+
+	go func() {
+		<-sig
+		fmt.Println("\n[INFO] closing interactive mode...")
+		fmt.Println("[INFO] saving dataset and history...")
+
+		if err := learner.Save(); err != nil {
+			fmt.Println(colorText("[ERROR] could not save dataset:", "red"))
+		} else {
+			fmt.Println(colorText("Dataset save on success!", "green"))
+		}
+
+		fmt.Println("See you soon! Bye...")
+		os.Exit(0)
+	}()
 
 	in := ""
 
