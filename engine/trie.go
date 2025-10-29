@@ -97,3 +97,19 @@ func (t *Trie) TrieNodeFromWord(word string) *TrieNode {
 
 	return nil
 }
+
+// TrieWords return all words in the Trie
+func (t *Trie) TrieWords() []string {
+	var results []string
+	t.collectWords(t.root, "", &results)
+	return results
+}
+
+// TrieFreq return the word frequency
+func (t *Trie) TrieFreq(word string) int {
+	node := t.TrieNodeFromWord(word)
+	if node != nil {
+		return node.freq
+	}
+	return 0
+}

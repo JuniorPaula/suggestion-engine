@@ -26,6 +26,16 @@ func NewServer() *Server {
 
 	l := engine.NewLearner(e, "data/searches.txt")
 
+	// save the word freq each 60 seconds
+	go func() {
+		for {
+			time.Sleep(60 * time.Second)
+			if err := l.Save(); err != nil {
+				log.Println(err)
+			}
+		}
+	}()
+
 	return &Server{
 		engine:  e,
 		history: h,

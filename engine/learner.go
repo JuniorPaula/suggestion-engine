@@ -37,20 +37,33 @@ func (l *Learner) Learn(term string) {
 	} else {
 		// if not exists, add to Trie
 		l.engine.AddWord(term)
+
+		// update frequency
+		node = l.engine.trie.TrieNodeFromWord(term)
+		node.freq = 1
 	}
 
-	// save file to the dataset
-	l.appendToDataset(term)
 }
 
-// appendToDataset: Adds the term to the end of the dataset with incremental frequency
-func (l *Learner) appendToDataset(term string) {
-	f, err := os.OpenFile(l.dataset, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+// Save: overwrite dataset with the current frequencies
+func (l *Learner) Save() error {
+	l.mu.Lock()
+	defer l.mu.Unlock()
+
+	f, err := os.Create(l.dataset)
 	if err != nil {
-		fmt.Println("[ERROR] could not save dataset:", err)
-		return
+		return fmt.Errorf("[ERROR] could not save dataset: %v", err)
 	}
 	defer f.Close()
-	line := fmt.Sprintf("%s %d\n", term, 1)
-	f.WriteString(line)
+
+	all := l.engine.trie.TrieWords()
+	for _, w := range all {
+		freq := l.engine.trie.TrieFreq(w)
+		if freq > 0 {
+			fmt.Println("[INFO] updating dataset...")
+			fmt.Fprintf(f, "%s %d\n", w, freq)
+		}
+	}
+
+	return nil
 }
