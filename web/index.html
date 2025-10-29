@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Motor de sugestão</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1> Motor de sugestão</h1>
+    <input type="text" id="search" placeholder="Digite algo.." autocomplete="off" />
+    <ul id="suggestions"></ul>
+  </div>
+
+  <script>
+    const input = document.getElementById("search")
+    const list = document.getElementById("suggestions")
+    let controller = null;
+    let timeout = null;
+
+    async function fetchSuggestions() {
+      const query = input.value.trim();
+      if (!query) {
+        list.innerHTML = "";
+        return;
+      }
+
+      if (controller) controller.abort();
+      controller = new AbortController();
+
+      try {
+        const res = await fetch(`/suggest?q=${encodeURIComponent(query)}`, { signal: controller.signal });
+        if (!res.ok) throw new Error("Error on request");
+        const data = await res.json();
+
+        list.innerHTML = "";
+        data.suggestions.forEach(s => {
+          const li = document.createElement("li");
+          li.textContent = s.Word;
+          list.appendChild(li)
+        });
+      } catch (err) {
+        if (err.name != "AbortError") console.error("Fetch error: ", err)
+      }
+    }
+
+    input.addEventListener("input", () => {
+      clearTimeout(timeout);
+      timeout = setTimeout(fetchSuggestions, 200);
+    });
+  </script>
+</body>
+</html>

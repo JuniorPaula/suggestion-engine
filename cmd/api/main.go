@@ -13,6 +13,8 @@ func main() {
 	mux.HandleFunc("/health", server.handleHealth)
 	mux.HandleFunc("/suggest", server.handleSuggest)
 
+	mux.Handle("/", http.FileServer(http.Dir("web")))
+
 	fmt.Println("Server running at: http://localhost:9696")
 	log.Fatal(http.ListenAndServe(":9696", mux))
 }
