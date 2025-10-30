@@ -48,7 +48,7 @@ func TestNormalize(t *testing.T) {
 // Test the Trie and the dataset loading
 func TestLoadFromFile(t *testing.T) {
 	e := engine.NewSuggestionEngine()
-	err := engine.LoadFromFile("../data/searches.txt", e)
+	err := engine.LoadFromFile("../data/test.txt", e)
 	if err != nil {
 		t.Fatalf("Error: on load dataset: %v", err)
 	}
