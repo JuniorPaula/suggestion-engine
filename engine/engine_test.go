@@ -26,3 +26,21 @@ func TestEditDistance(t *testing.T) {
 		}
 	}
 }
+
+// Tests nomalization (accents, capitalization, spaces)
+func TestNormalize(t *testing.T) {
+	tests := []struct {
+		in, want string
+	}{
+		{"Programação", "programacao"},
+		{"  PYTHON", "python"},
+		{"Ciência da Computação", "ciencia da computacao"},
+	}
+
+	for _, tt := range tests {
+		got := engine.Normalize(tt.in)
+		if got != tt.want {
+			t.Errorf("Normalize(%q) = %q; want %q", tt.in, got, tt.want)
+		}
+	}
+}
