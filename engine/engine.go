@@ -16,6 +16,11 @@ func (e *SuggestionEngine) AddWord(word string) {
 	e.trie.Insert(word)
 }
 
+// Exist wrapper method to call trie.Exists
+func (e *SuggestionEngine) Exists(word string) bool {
+	return e.trie.Exists(word)
+}
+
 // Suggest return the most relevants suggestion for the typing term
 func (e *SuggestionEngine) Suggest(input string, limit int) []RankedWord {
 	input = Normalize(input)

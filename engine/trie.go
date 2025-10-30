@@ -113,3 +113,16 @@ func (t *Trie) TrieFreq(word string) int {
 	}
 	return 0
 }
+
+// Exists checks if a complete word is in the Trie
+func (t *Trie) Exists(word string) bool {
+	node := t.root
+	for _, ch := range word {
+		if next, ok := node.children[ch]; ok {
+			node = next
+		} else {
+			return false
+		}
+	}
+	return node.isEnd
+}
