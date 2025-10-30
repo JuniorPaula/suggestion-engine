@@ -98,3 +98,16 @@ func TestSuggest(t *testing.T) {
 		}
 	}
 }
+
+// Benchmarck simple for suggest performace
+func BenchmarkSuggest(b *testing.B) {
+	e := engine.NewSuggestionEngine()
+	err := engine.LoadFromFile("../data/test.txt", e)
+	if err != nil {
+		b.Fatalf("Error: on load dataset: %v", err)
+	}
+
+	for i := 0; i < b.N; i++ {
+		e.Suggest("programacao", 5)
+	}
+}
