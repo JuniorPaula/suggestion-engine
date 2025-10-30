@@ -1,24 +1,21 @@
-teoria 1
-teoria dos grafos 130
-teste de software 81
-terraform 114
-typescript 86
-a 2
-azure 59
-analise de dados 223
-ansible 128
-al 2
-algoritmos 55
-alto 1
-auto 1
-automa 1
-automatos finitos 332
-automacao industrial 186
-aprendizado de maquina 301
-arquitetura de software 79
-aws 371
-web3 223
 linguagens formais 140
+numpy python 108
+monitoramento prometheus 73
+machine learning supervisionado 173
+machine learning nao supervisionado 112
+matplotlib 211
+microservicos 200
+devops 65
+design patterns 304
+desenvlve 14
+desenvolvedor 3
+desenvolvedor backend 2
+docker 379
+observabilidade grafana 71
+swift 207
+scikit learn 369
+seguranca da informacao 58
+sistemas operacionais 104
 r 1
 ru 1
 rus 1
@@ -28,7 +25,34 @@ realidade virtual 385
 realidade aumentada 227
 redes de computadores 80
 redes neurais 170
-numpy python 108
+java 70
+javascript 65
+b 1
+banco de dados 61
+backend 1
+blockchain 137
+br 1
+bra 1
+brasil 1
+c 388
+ci 2
+ci cd 94
+cie 2
+cien 2
+cient 1
+cienc 2
+cienci 2
+ciencia 6
+criptografia 179
+co 2
+com 2
+comp 1
+compiladores 60
+computacao 1
+computacao quantica 404
+controle de versao 55
+c++ 68
+web3 223
 g 2
 gra 2
 grafo 1
@@ -39,32 +63,30 @@ gol 1
 golang 146
 git 77
 github 54
-java 70
-javascript 65
+kubernetes 357
+kotlin 174
+teste de software 81
+terraform 114
+teoria 1
+teoria dos grafos 130
+typescript 86
+a 2
+auto 1
+automa 1
+automacao industrial 186
+automatos finitos 332
+aprendizado de maquina 301
+arquitetura de software 79
+aws 371
+azure 59
+analise de dados 223
+ansible 128
+al 2
+algoritmos 55
+alto 1
 inteligencia artificial 105
 internet das coisas 142
 iot 90
-microservicos 200
-monitoramento prometheus 73
-machine learning supervisionado 173
-machine learning nao supervisionado 112
-matplotlib 211
-b 1
-banco de dados 61
-backend 1
-blockchain 137
-br 1
-bra 1
-brasil 1
-devops 65
-design patterns 304
-desenvlve 14
-desenvolvedor 3
-desenvolvedor backend 2
-docker 379
-observabilidade grafana 71
-kubernetes 357
-kotlin 174
 p 2
 pyth 1
 python 2314
@@ -75,32 +97,10 @@ processamento de linguagem natural 57
 prog 1
 progra 1
 programacao 1
+programacao dinamica 184
 programacao orientada a objetos 402
 programacao funcional 140
-programacao dinamica 184
-c 388
-ci 2
-ci cd 94
-cie 2
-cien 2
-cienc 2
-cienci 2
-ciencia 6
-cient 1
-criptografia 179
-co 2
-com 2
-comp 1
-compiladores 60
-computacao 1
-computacao quantica 404
-controle de versao 55
-c++ 68
 visao computacional 58
-scikit learn 369
-seguranca da informacao 58
-sistemas operacionais 104
-swift 207
 estrutura de dados 319
 en 1
 engenharia de software 143

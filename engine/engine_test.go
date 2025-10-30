@@ -60,3 +60,41 @@ func TestLoadFromFile(t *testing.T) {
 		}
 	}
 }
+
+// Test the complete suggestion system
+func TestSuggest(t *testing.T) {
+	e := engine.NewSuggestionEngine()
+	err := engine.LoadFromFile("../data/test.txt", e)
+	if err != nil {
+		t.Fatalf("Error: on load dataset: %v", err)
+	}
+
+	tests := []struct {
+		query string
+		want  string
+	}{
+		{"pytohn", "python"},
+		{"progra", "programacao"},
+		{"dinam", "dinamica"},
+	}
+
+	for _, tt := range tests {
+		results := e.Suggest(tt.query, 3)
+		if len(results) == 0 {
+			t.Errorf("Suggest(%q): expected suggestions, got 0", tt.query)
+			continue
+		}
+
+		found := false
+		for _, r := range results {
+			if r.Word == tt.want {
+				found = true
+				break
+			}
+		}
+
+		if !found {
+			t.Errorf("Suggest(%q): expected contains %q, but dit not appear in the results", tt.query, tt.want)
+		}
+	}
+}
