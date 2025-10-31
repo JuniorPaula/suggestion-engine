@@ -15,8 +15,8 @@ func main() {
 	server := NewServer()
 
 	mux := http.NewServeMux()
-	mux.HandleFunc("/health", server.handleHealth)
-	mux.HandleFunc("/suggest", server.handleSuggest)
+	mux.HandleFunc("/health", server.HandleHealth)
+	mux.HandleFunc("/suggest", server.HandleSuggest)
 
 	mux.Handle("/", http.FileServer(http.Dir("web")))
 

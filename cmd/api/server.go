@@ -17,14 +17,14 @@ type Server struct {
 
 func NewServer() *Server {
 	e := engine.NewSuggestionEngine()
-	if err := engine.LoadFromFile("data/searches.txt", e); err != nil {
+	if err := engine.LoadFromFile("../../data/searches.txt", e); err != nil {
 		log.Fatalf("[ERROR] could not load dataset: %v\n", err)
 	}
 
-	h := engine.NewHistory("data/search_log.txt")
+	h := engine.NewHistory("../../data/search_log.txt")
 	h.Load()
 
-	l := engine.NewLearner(e, "data/searches.txt")
+	l := engine.NewLearner(e, "../../data/searches.txt")
 
 	// save the word freq each 60 seconds
 	go func() {
@@ -43,7 +43,7 @@ func NewServer() *Server {
 	}
 }
 
-func (s *Server) handleSuggest(w http.ResponseWriter, r *http.Request) {
+func (s *Server) HandleSuggest(w http.ResponseWriter, r *http.Request) {
 	query := r.URL.Query().Get("q")
 	if query == "" {
 		http.Error(w, "Missing query parameter: q", http.StatusBadRequest)
@@ -69,7 +69,7 @@ func (s *Server) handleSuggest(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(resp)
 }
 
-func (s *Server) handleHealth(w http.ResponseWriter, r *http.Request) {
+func (s *Server) HandleHealth(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusOK)
 	fmt.Fprintf(w, "ok")
 }
