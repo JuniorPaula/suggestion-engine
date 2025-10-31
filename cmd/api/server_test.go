@@ -42,3 +42,17 @@ func TestSuggestEndpoint(t *testing.T) {
 		t.Errorf("expected at least a suggestions, but got 0")
 	}
 }
+
+// Test the case when the query is missing (error 404)
+func TestSuggestMissingQuery(t *testing.T) {
+	server := main.NewServer()
+
+	req := httptest.NewRequest(http.MethodGet, "/suggest", nil)
+	rec := httptest.NewRecorder()
+
+	server.HandleSuggest(rec, req)
+
+	if rec.Code != http.StatusBadRequest {
+		t.Fatalf("expected status code 404, but got %d", rec.Code)
+	}
+}
