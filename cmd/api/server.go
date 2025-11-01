@@ -21,10 +21,10 @@ func NewServer() *Server {
 		log.Fatal(err)
 	}
 
-	h := engine.NewHistory("../../engine/data/search_log.txt")
+	h := engine.NewHistory("engine/data/search_log.txt")
 	h.Load()
 
-	l := engine.NewLearner(e, "../../engine/data/searches.txt")
+	l := engine.NewLearner(e, "engine/data/searches.txt")
 
 	// save the word freq each 60 seconds
 	go func() {

@@ -11,6 +11,8 @@ import (
 	"time"
 )
 
+import _ "net/http/pprof"
+
 func main() {
 	server := NewServer()
 
@@ -29,6 +31,12 @@ func main() {
 	signal.Notify(stop, os.Interrupt, syscall.SIGTERM)
 
 	go func() {
+		log.Println("pprof active on :6060")
+		http.ListenAndServe("localhost:6060", nil)
+	}()
+
+	go func() {
+
 		fmt.Println("Server running at: http://localhost:9696")
 		if err := srv.ListenAndServe(); err != nil &&
 			err != http.ErrServerClosed {
