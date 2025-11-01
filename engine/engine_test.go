@@ -48,9 +48,9 @@ func TestNormalize(t *testing.T) {
 // Test the Trie and the dataset loading
 func TestLoadFromFile(t *testing.T) {
 	e := engine.NewSuggestionEngine()
-	err := engine.LoadFromFile("../data/test.txt", e)
+	err := engine.LoadTestDataset(e)
 	if err != nil {
-		t.Fatalf("Error: on load dataset: %v", err)
+		t.Fatal(err)
 	}
 
 	checks := []string{"python", "grafos", "programacao"}
@@ -64,9 +64,9 @@ func TestLoadFromFile(t *testing.T) {
 // Test the complete suggestion system
 func TestSuggest(t *testing.T) {
 	e := engine.NewSuggestionEngine()
-	err := engine.LoadFromFile("../data/test.txt", e)
+	err := engine.LoadTestDataset(e)
 	if err != nil {
-		t.Fatalf("Error: on load dataset: %v", err)
+		t.Fatal(err)
 	}
 
 	tests := []struct {
@@ -102,9 +102,9 @@ func TestSuggest(t *testing.T) {
 // Benchmarck simple for suggest performace
 func BenchmarkSuggest(b *testing.B) {
 	e := engine.NewSuggestionEngine()
-	err := engine.LoadFromFile("../data/test.txt", e)
+	err := engine.LoadTestDataset(e)
 	if err != nil {
-		b.Fatalf("Error: on load dataset: %v", err)
+		b.Fatal(err)
 	}
 
 	for i := 0; i < b.N; i++ {

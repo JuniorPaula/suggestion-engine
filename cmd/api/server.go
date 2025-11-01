@@ -17,14 +17,14 @@ type Server struct {
 
 func NewServer() *Server {
 	e := engine.NewSuggestionEngine()
-	if err := engine.LoadFromFile("../../data/searches.txt", e); err != nil {
-		log.Fatalf("[ERROR] could not load dataset: %v\n", err)
+	if err := engine.LoadEmbeddedDataset(e); err != nil {
+		log.Fatal(err)
 	}
 
-	h := engine.NewHistory("../../data/search_log.txt")
+	h := engine.NewHistory("../../engine/data/search_log.txt")
 	h.Load()
 
-	l := engine.NewLearner(e, "../../data/searches.txt")
+	l := engine.NewLearner(e, "../../engine/data/searches.txt")
 
 	// save the word freq each 60 seconds
 	go func() {
