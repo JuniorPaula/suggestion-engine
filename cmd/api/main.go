@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"os"
 	"os/signal"
+	"runtime"
 	"syscall"
 	"time"
 )
@@ -15,6 +16,7 @@ import _ "net/http/pprof"
 
 func main() {
 	server := NewServer()
+	printMemUsage()
 
 	mux := http.NewServeMux()
 	mux.HandleFunc("/health", server.HandleHealth)
@@ -62,4 +64,20 @@ func main() {
 	}
 
 	fmt.Println(" Bye! Bye...")
+}
+
+func printMemUsage() {
+	var m runtime.MemStats
+	runtime.ReadMemStats(&m)
+
+	fmt.Printf("=== GO Memory ===\n")
+	fmt.Printf("Alloc = %v MiB\n", bToMb(m.Alloc))
+	fmt.Printf("TotalAlloc = %v MiB\n", bToMb(m.TotalAlloc))
+	fmt.Printf("Sys = %v MiB\n", bToMb(m.Sys))
+	fmt.Printf("NumGC = %v\n", m.NumGC)
+	fmt.Println("=========================")
+}
+
+func bToMb(b uint64) uint64 {
+	return b / 1024 / 1024
 }

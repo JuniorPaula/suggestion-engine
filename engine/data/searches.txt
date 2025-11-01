@@ -1,26 +1,29 @@
+teste de software 81
+terraform 114
+teoria 1
+teoria dos grafos 130
+typescript 86
+scikit learn 369
+seguranca da informacao 58
+sistemas operacionais 104
+swift 207
+a 2
+al 2
+algoritmos 55
+alto 1
+auto 1
+automa 1
+automatos finitos 332
+automacao industrial 186
+aprendizado de maquina 301
+arquitetura de software 79
+aws 371
+azure 59
+ansible 128
+analise de dados 223
 en 1
 engenharia de software 143
 estrutura de dados 319
-observabilidade grafana 71
-c 388
-ci 2
-cie 2
-cien 2
-cienc 2
-cienci 2
-ciencia 6
-cient 1
-ci cd 94
-criptografia 179
-co 2
-com 2
-comp 1
-compiladores 60
-compu 1
-computacao 1
-computacao quantica 404
-controle de versao 55
-c++ 68
 design patterns 304
 desenvolvedor 3
 desenvolvedor backend 2
@@ -41,46 +44,18 @@ programacao funcional 140
 pyth 1
 python 2314
 pandas python 148
-kotlin 174
-kubernetes 357
-visao computacional 58
-machine learning nao supervisionado 112
-machine learning supervisionado 173
-matplotlib 211
-microservicos 200
-monitoramento prometheus 73
-web3 223
 java 70
 javascript 65
-inteligencia artificial 105
-internet das coisas 142
-iot 90
-b 1
-backend 1
-banco de dados 61
-blockchain 137
-br 1
-bra 1
-brasil 1
-teste de software 81
-terraform 114
-teoria 1
-teoria dos grafos 130
-typescript 86
 r 1
-redes neurais 170
-redes de computadores 80
-realidade aumentada 227
-realidade virtual 385
 ru 1
 rus 1
 rust 94
 robotica 56
+redes neurais 170
+redes de computadores 80
+realidade aumentada 227
+realidade virtual 385
 linguagens formais 140
-swift 207
-scikit learn 369
-seguranca da informacao 58
-sistemas operacionais 104
 g 2
 gra 2
 grafo 1
@@ -91,17 +66,42 @@ golang 146
 google cloud 137
 git 77
 github 54
-a 2
-auto 1
-automa 1
-automacao industrial 186
-automatos finitos 332
-aprendizado de maquina 301
-arquitetura de software 79
-aws 371
-azure 59
-ansible 128
-analise de dados 223
-al 2
-algoritmos 55
-alto 1
+c 388
+ci 2
+cie 2
+cien 2
+cienc 2
+cienci 2
+ciencia 6
+cient 1
+ci cd 94
+criptografia 179
+co 2
+com 2
+comp 1
+compiladores 60
+compu 1
+computacao 1
+computacao quantica 404
+controle de versao 55
+c++ 68
+kotlin 174
+kubernetes 357
+web3 223
+b 1
+backend 1
+banco de dados 61
+blockchain 137
+br 1
+bra 1
+brasil 1
+observabilidade grafana 71
+visao computacional 58
+machine learning nao supervisionado 112
+machine learning supervisionado 173
+matplotlib 211
+microservicos 200
+monitoramento prometheus 73
+inteligencia artificial 105
+internet das coisas 142
+iot 90
