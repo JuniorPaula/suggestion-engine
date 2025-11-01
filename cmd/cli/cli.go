@@ -31,16 +31,16 @@ func colorText(text, color string) string {
 
 func main() {
 	e := engine.NewSuggestionEngine()
-	err := engine.LoadFromFile("data/searches.txt", e)
+	err := engine.LoadEmbeddedDataset(e)
 	if err != nil {
-		fmt.Println("[ERROR] could not load dataset:", err)
+		fmt.Println(err)
 		return
 	}
 
-	history := engine.NewHistory("data/search_log.txt")
+	history := engine.NewHistory("engine/data/search_log.txt")
 	history.Load()
 
-	learner := engine.NewLearner(e, "data/searches.txt")
+	learner := engine.NewLearner(e, "engine/data/searches.txt")
 
 	reader := bufio.NewReader(os.Stdin)
 
