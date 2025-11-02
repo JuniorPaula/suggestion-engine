@@ -166,7 +166,9 @@ O heap permanece estável mesmo sob carga contínua, comprovando a eficiência d
 ## Artigo completo
 
 Leia o post detalhado no blog:
-**“Programação Dinâmica aplicada a um Motor de Sugestões em Go”**
+
+[**“Programação Dinâmica aplicada a um Motor de Sugestões em Go”**](https://www.juniorpaula.com.br/articles/programacao-dinamica-aplicada-a-um-motor-de-sugestoes-em-go)
+
 Mostrando toda a jornada, da teoria à análise de performance.
 
 ---
@@ -178,6 +180,6 @@ Sinta-se livre para usar, estudar e modificar.
 
 ---
 
-**Autor:** [Junior Paula](https://github.com/JuniorPaula)
+**Autor:** [Junior Paula](https://www.juniorpaula.com.br)
 
 > “A eficiência vem de entender o problema antes de escolher a linguagem.”
