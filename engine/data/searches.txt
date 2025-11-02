@@ -1,27 +1,18 @@
-r 1
-ru 1
-rus 1
-rust 94
-robotica 56
-redes neurais 170
-redes de computadores 80
-realidade aumentada 227
-realidade virtual 385
-visao computacional 58
 a 2
-al 2
-algoritmos 55
-alto 1
-auto 1
-automa 1
-automacao industrial 186
-automatos finitos 332
 aprendizado de maquina 301
 arquitetura de software 79
 aws 371
 azure 59
 analise de dados 223
 ansible 128
+al 2
+algoritmos 55
+alto 1
+auto 1
+automt 1
+automa 1
+automatos finitos 332
+automacao industrial 186
 p 2
 pr 2
 pro 3
@@ -29,12 +20,27 @@ processamento de linguagem natural 57
 prog 1
 progra 1
 programacao 1
+programacao orientada a objetos 402
 programacao funcional 140
 programacao dinamica 184
-programacao orientada a objetos 402
 pyth 1
 python 3314
 pandas python 148
+g 2
+go 3
+google cloud 137
+gol 1
+golang 146
+git 77
+github 54
+gra 2
+grafo 1
+grafos 6
+microservicos 200
+monitoramento prometheus 73
+machine learning supervisionado 173
+machine learning nao supervisionado 112
+matplotlib 211
 c 388
 ci 2
 ci cd 94
@@ -54,47 +60,38 @@ computacao quantica 404
 compiladores 60
 controle de versao 55
 c++ 68
-teste de software 81
-terraform 114
-teoria 1
-teoria dos grafos 130
-typescript 86
-kotlin 174
-kubernetes 357
 web3 223
-devops 65
-design patterns 304
-desenvlve 14
-desenvolvedor 3
-desenvolvedor backend 2
-docker 379
 numpy python 108
-g 2
-go 3
-google cloud 137
-gol 1
-golang 146
-git 77
-github 54
-gra 2
-grafo 1
-grafos 6
-machine learning nao supervisionado 112
-machine learning supervisionado 173
-matplotlib 211
-microservicos 200
-monitoramento prometheus 73
 b 1
-backend 1
-banco de dados 61
 blockchain 137
 br 1
 bra 1
 brasil 1
-observabilidade grafana 71
+backend 1
+banco de dados 61
+linguagens formais 140
+iot 90
+internet das coisas 142
+inteligencia artificial 105
+r 1
+ru 1
+rus 1
+rust 94
+robotica 56
+redes neurais 170
+redes de computadores 80
+realidade aumentada 227
+realidade virtual 385
+kotlin 174
+kubernetes 357
+devops 65
+design patterns 304
+desenvolvedor 3
+desenvolvedor backend 2
+desenvlve 14
+docker 379
 java 70
 javascript 65
-linguagens formais 140
 scikit learn 369
 seguranca da informacao 58
 sistemas operacionais 104
@@ -102,6 +99,10 @@ swift 207
 en 1
 engenharia de software 143
 estrutura de dados 319
-iot 90
-internet das coisas 142
-inteligencia artificial 105
+visao computacional 58
+teste de software 81
+terraform 114
+teoria 1
+teoria dos grafos 130
+typescript 86
+observabilidade grafana 71
